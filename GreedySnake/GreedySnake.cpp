@@ -6,7 +6,7 @@
 
 int main()
 {
-    std::cout << "小六好帅aaaaaaaaa"; 
+    std::cout << "小六好帅aaaa发射点发多少法大师傅撒先擦手册去微软aaaaa"; 
 }
 
 // 运行程序: Ctrl + F5 或调试 >“开始执行(不调试)”菜单
