@@ -6,7 +6,7 @@
 
 int main()
 {
-    std::cout << "小六好帅aaaaaaaaa"; 
+    std::cout << "小六好帅aaaaaaaaabbbbbbbbbbranch的第三方算的发1"; 
 }
 
 // 运行程序: Ctrl + F5 或调试 >“开始执行(不调试)”菜单
