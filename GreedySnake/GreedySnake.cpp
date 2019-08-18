@@ -11,7 +11,7 @@ using namespace std;
 
 int main()
 {
-	WindowsPaint window;
+  WindowsPaint window;
 	Position posi;
 	cin.get();
 	closegraph();
