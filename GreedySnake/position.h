@@ -22,7 +22,7 @@ Position::Position(int x, int y):x(x),y(y){
 }
 Position Position::randomPosi() {
 	int randomY = (rand() % 28 + 1) * 20;
-	int randomX = ((rand() * rand() / rand()) % 38 + 1) * 20;
+	int randomX = (rand() % 38 + 1) * 20;
 	std::cout << "random position on x : " << randomX << " y: " << randomY << std::endl;
 	return Position(randomX, randomY);
 }

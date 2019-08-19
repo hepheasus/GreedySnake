@@ -87,9 +87,15 @@ class WindowsPaint : public Paint
 public:
 	WindowsPaint();
 	~WindowsPaint();
+	void templatePaint() {
+		iniBorder();
+		iniScoreBoard();
+		FlushBatchDraw();
+	}
 private:
 	void iniBorder();
 	void iniScoreBoard();
+	
 };
 
 WindowsPaint::WindowsPaint()
@@ -105,6 +111,7 @@ WindowsPaint::WindowsPaint()
 	iniBorder();
 	iniScoreBoard();
 	printScore();
+	BeginBatchDraw();
 	std::cout << "窗口初始化成功" << std::endl;
 }
 
