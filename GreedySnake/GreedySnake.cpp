@@ -3,9 +3,19 @@
 #include "pch.h"
 #include <iostream>
 #include <easyx.h>
+#include "paint.h"
+#include "Snake.h"
+#include <Windows.h>
+#include <conio.h>
 using namespace std;
 int main()
 {
-    
+	Snake snake;
+	while (true) {
+		while (_kbhit()) {
+			snake.dir = _getch();
+		}
+		snake.move();
+	}
 }
 

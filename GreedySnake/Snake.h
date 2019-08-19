@@ -1,6 +1,7 @@
 #pragma once
 #include "pch.h"
 #include "position.h"
+#include "paint.h"
 #include <queue>
 #include <vector>
 using namespace std;
@@ -11,14 +12,13 @@ private:
 	queue<Position> body;
 	Position SnakeBody;
 	WindowsPaint paint;
-	
 	void printBody();
 	int speed = 200;
 public:
 	int dir;
 	Snake();
 	void Eat();
-	void move(int dire);
+	void move();
 };
 
 Snake::Snake() {
@@ -44,10 +44,10 @@ void Snake::printBody() {
 	}
 	FlushBatchDraw();
 }
-void Snake::move(int dire) {
+void Snake::move() {
 	// 判断撞墙和吃东西和吃到自己
 	Position top = body.front();
-	switch (dire) {
+	switch (dir) {
 	case 97:	//A--left
 		body.pop();
 		top.x -= STEP;
@@ -55,7 +55,6 @@ void Snake::move(int dire) {
 		cleardevice();
 		printBody();
 		paint.templatePaint();
-		dir = 97;
 		break;
 	case 100:	//D--right
 		cleardevice();
@@ -66,7 +65,6 @@ void Snake::move(int dire) {
 		printBody();
 		Sleep(speed);
 		paint.templatePaint();
-		dir = 100;
 		break;
 	case 115:	//S--down
 		body.pop();
@@ -75,7 +73,6 @@ void Snake::move(int dire) {
 		printBody();
 		Sleep(speed);
 		paint.templatePaint();
-		dir = 115;
 		break;
 	case 119:	//W--up
 		body.pop();
@@ -84,7 +81,6 @@ void Snake::move(int dire) {
 		printBody();
 		Sleep(speed);
 		paint.templatePaint();
-		dir = 119;
 		break;
 	}
 
