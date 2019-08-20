@@ -10,9 +10,14 @@ public:
 	int x;
 	int y;
 	Position randomPosi();
+	bool operator==(const Position posi) const {
+		return posi.x == x && posi.y == y;
+	}
 private:
 	
 };
+
+
 Position::Position() {
 	srand(GetTickCount());
 }

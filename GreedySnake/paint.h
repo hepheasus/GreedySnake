@@ -3,6 +3,7 @@
 #include "pch.h"
 #include "position.h"
 #include <string>
+extern int foodscore;
 const int BACKGROUND_COLOR = RGB(228, 241, 254);
 const int BORDER_COLOR = RGB(0, 181, 204);
 const int BORDER_HEIGHT = 600;
@@ -29,10 +30,11 @@ bool Paint::printFood(Position posi) {
 		std::cout << "invaild position on x: " << posi.x << " y: " << posi.y << std::endl;
 		return false;
 	}
-	int currcolor = getfillcolor();
 	setfillcolor(FOOD_COLOR);
 	solidcircle(posi.x + 10, posi.y + 10, STEP / 2 - 5);
-	setfillcolor(currcolor);
+	std::cout << "in Paint::printFood" << std::endl;
+	std::cout << "posi = (" << posi.x << "," << posi.y << ")" << std::endl;
+	std::cout << "out of Paint::printFood" << std::endl;
 	return true;
 }
 
@@ -88,6 +90,7 @@ public:
 	WindowsPaint();
 	~WindowsPaint();
 	void templatePaint() {
+		printScore(foodscore);
 		iniBorder();
 		iniScoreBoard();
 		FlushBatchDraw();
@@ -101,7 +104,7 @@ private:
 WindowsPaint::WindowsPaint()
 {
 	// 初始化窗口
-	initgraph(WINDOWS_WIDTH, WINDOWS_HEIGHT);
+	initgraph(WINDOWS_WIDTH, WINDOWS_HEIGHT,SHOWCONSOLE);
 	// 左上角为（0，0）
 	/*setorigin(0,WINDOWS_HEIGHT);
 	setaspectratio(1, -1);*/
@@ -161,9 +164,9 @@ void WindowsPaint::iniScoreBoard() {
 	outtextxy(915, 75, s);
 	TCHAR score[] = _T("SCORE:");
 	outtextxy(810, 150, score);
-	
 }
 
 WindowsPaint::~WindowsPaint()
 {
 }
+

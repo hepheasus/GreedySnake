@@ -27,6 +27,9 @@
     <ClInclude Include="paint.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Food.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
